@@ -1,28 +1,10 @@
 /* project.css */
-body {
-    font-family: sans-serif;
-    font-size: "25px";
-    color: #ffffff;
-    text-align: left;
-    background-color: #1c1c1c;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+/* ... other styles ... */
 
-a {
-    text-decoration: none;
-    color: #0084ff;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.game-link { /* Apply glow to the <a> tag */
+.game-link {
     height: 400px;
     width: 300px;
-    position: relative; /* Needed for absolute positioning of :before and :after */
-    overflow: hidden; /* Hide any overflowing glow */
+    /* Remove position: relative from here */
 }
 
 .game-tile {
@@ -33,32 +15,14 @@ a {
     border-radius: 30px;
     -webkit-animation: scale-down-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: scale-down-center 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-.game-tile:hover {
-    text-decoration: none;
-    -webkit-animation: scale-up-center 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-    animation: scale-up-center 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    position: relative; /* Add position: relative to the game-tile */
+    overflow: hidden; /* Hide any overflowing glow */
 }
 
 /* ... (keyframes remain the same) ... */
 
-.game-icon {
-    border-radius: 30px;
-    width: 300px;
-    height: 300px;
-}
-
-.game-title {
-    font-size: 30px;
-    color: #ffffff;
-    text-align: center;
-}
-
-/* ... (flex container and other styles) ... */
-
-/* Glow effect styles - Moved from inline <style> */
-.game-link:before { /* Apply glow to the <a> tag */
+/* Glow effect styles */
+.game-tile:before { /* Apply glow to the game-tile */
     content: '';
     background: linear-gradient(45deg, #6C00FF, #7800FF, #8300FF, #A600FF);
     position: absolute;
@@ -72,14 +36,14 @@ a {
     animation: glowing 20s linear infinite;
     opacity: 0;
     transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+    border-radius: 30px; /* Match the game-tile border-radius */
 }
 
-.game-link:hover:before { /* Apply glow on hover */
+.game-tile:hover:before { /* Apply glow on hover */
     opacity: 1;
 }
 
-.game-link:after { /* Apply glow to the <a> tag */
+.game-tile:after { /* Apply glow to the game-tile */
     z-index: -1;
     content: '';
     position: absolute;
@@ -88,7 +52,7 @@ a {
     background: #111;
     left: 0;
     top: 0;
-    border-radius: 10px;
+    border-radius: 30px; /* Match the game-tile border-radius */
 }
 
 @keyframes glowing {
