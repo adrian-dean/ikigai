@@ -1,0 +1,8 @@
+{
+    "name": "adrian-dean.github.io",
+    "description": "This is 3kh0.github.io v3 the better unblocked games website! There are tons of features to enjoy while gaming, make this your go-to site! If you fork this repo please give me a star to support me.",
+    "repository": "https://github.com/adrian-dean/ikigai",
+    "logo": "https://github.com/fluidicon.png",
+    "keywords": ["unblocked games", "adrian-dean"],
+    "buildpacks": [{"url": "https://github.com/heroku/heroku-buildpack-static"}]
+}
